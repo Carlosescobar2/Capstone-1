@@ -1,19 +1,20 @@
 import firebase from "firebase";
 const firebaseConfig = {
-  apiKey: "AIzaSyDIXJ5YT7hoNbBFqK3TBcV41-TzIO-7n7w",
-  authDomain: "fir-auth-6edd8.firebaseapp.com",
-  projectId: "fir-auth-6edd8",
-  storageBucket: "fir-auth-6edd8.appspot.com",
-  messagingSenderId: "904760319835",
-  appId: "1:904760319835:web:44fd0d957f114b4e51447e",
-  measurementId: "G-Q4TYKH9GG7",
+  apiKey: "AIzaSyCkQm-g4lREafTHcL8fusvEfna1gD7CuFc",
+  authDomain: "one-sip-b05ef.firebaseapp.com",
+  projectId: "one-sip-b05ef",
+  storageBucket: "one-sip-b05ef.appspot.com",
+  messagingSenderId: "969247346467",
+  appId: "1:969247346467:web:e45cb5f18b61a9c4390696",
+  measurementId: "G-X1FD3P4ZLD"
 };
 const app = firebase.initializeApp(firebaseConfig);
 const auth = app.auth();
 const db = app.firestore();
 const googleProvider = new firebase.auth.GoogleAuthProvider();
-const signInWithGoogle = async () => {
+const signInWithGoogle = async (e) => {
   try {
+    e.preventDefault()
     const res = await auth.signInWithPopup(googleProvider);
     const user = res.user;
     const query = await db
