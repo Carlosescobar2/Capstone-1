@@ -1,12 +1,12 @@
 export const Cores = [
-    {id:1, core:'PhoenixFeather'},
-    {id:3, core:'Dragon-HeartString'},
-    {id:6,core:'Unicorn Tail Hair'}
+    {optionText:"PhoenixFeather", wandcore:'PhoenixFeather'},
+    {optionText:"DragonHeartString",  wandcore:'Dragon-HeartString'},
+    {optionText:"Unicorn", wandcore:'Unicorn Tail Hair'}
 ]
 
 
 export const Woods = [ 
-    {id:2, wood:'Elder'},
-    {id:4, wood:'Holly'},
-    {id:6, wood:'Yew'}
+    {id:2, wandwood:'Elder'},
+    {id:4, wandwood:'Holly'},
+    {id:6, wandwood:'Yew'}
 ] 

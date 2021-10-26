@@ -1,0 +1,28 @@
+* { 
+    padding: 0; 
+    margin: 0;
+}
+
+.pageStyle { 
+    display: flex;
+    
+}
+
+.headerPg{
+    flex-flow: column;
+
+}
+
+.coresSection { 
+    align-items: center;
+    margin-top: 300px;
+}
+
+.woodSection{
+    margin-top: 500px;
+  
+}
+
+.woodBtns {
+   
+}

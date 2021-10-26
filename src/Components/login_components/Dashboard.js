@@ -77,7 +77,6 @@ function Dashboard() {
 			setShowHouse(true);
 		}
 	};
-	
 	const [banner, setBanner] = useState('')
 	const ChangeBackground = () => {
 		if (house === 'Gryffindor' && showHouse===true) {
@@ -100,7 +99,9 @@ function Dashboard() {
 
 	return (
 		<div>
-		<div className='main-title'>Your a Wizard {name}</div>
+		<div className='main-title'>
+			<h1>Become a Wizard</h1>
+			</div>
 		<div className='app'>
 			{showQuiz ? (
 			<div>
