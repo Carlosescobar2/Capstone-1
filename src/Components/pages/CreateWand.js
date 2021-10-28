@@ -8,6 +8,7 @@ import { useHistory } from "react-router";
 import{Cores, Woods} from '../../data/wandsData'
 import './CreateWand.css'
 import Wand1, { CylinderBufferGeometry, CylinderGeometry } from "../ThreeWands/wand1";
+import Wand2 from '../ThreeWands/wand2'
 
 import Phoenix from "../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png"
 
@@ -86,7 +87,7 @@ const CreateWand = () => {
  
 
         </div>
-        <Wand1 />
+        <Wand2 />
         </div>
     )
 }

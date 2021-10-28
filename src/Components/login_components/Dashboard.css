@@ -36,19 +36,24 @@
 .question {
   font-family: 'MonteCarlo', cursive;
   animation: fadein 2s;
+  color: white;
 }
 
 body {
   display: flex;
   justify-content: center;
-  background-image: url('');
   align-items: center;
-  min-height: 97vh;;
-  background-color: 	black;
+  min-height: 97vh;
+  background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   position:relative;
   z-index:-1;
+}
+
+
+.backgroundCover { 
+  background-size: cover;
 }
 
 .app {
@@ -128,6 +133,8 @@ body {
   margin-bottom: 20px;
   line-height: 1.6;
   animation: fadein 0.5s;
+  color:white;
+
 }
 
 .answer-section {

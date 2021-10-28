@@ -132,8 +132,7 @@ function Dashboard() {
 							<button className="houseButtons"onClick={() => {AnswerHandler(option.gryffindor, option.slytherin, option.ravenclaw, option.hufflepuff);}}>{option.optionText}</button>
 						))}
 					</div>
-				</div>
-					
+				</div> 
 				</>
 			)} </div>
 		) : (
@@ -148,6 +147,11 @@ function Dashboard() {
 		</>
 		)}
 		</div>
+		<div style={{ 
+      backgroundImage: `url("https://wallpaperaccess.com/full/22919.jpg")` 
+    }}>
+
+    </div>
 		</div>
 	);
 }
