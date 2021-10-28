@@ -89,6 +89,7 @@ function Dashboard() {
 			setBanner(BannerHufflePuff);}
 	};
 
+
 	useEffect(() => {
 		if(showHouse){return ChangeBackground()}
         if(loading) return;
@@ -98,19 +99,20 @@ function Dashboard() {
  
 
 	return (
-		<div>
+		<div classname="dashboard">
 		<div className='main-title'>
-			<h1>Become a Wizard</h1>
+			<h1 className='order'>Become a Wizard</h1>
+			
 			</div>
 		<div className='app'>
 			{showQuiz ? (
 			<div>
 			{showHouse ? (
 				<div className='score-section'>
-					You belong in 
+					{name}you belong in
 					<br/>
 					<p className='house'>{house}</p>
-          			<img src={banner}/>
+          			<img className='pic'src={banner}/>
 		  <Link to="/CreateWand"><button>{name} now make your wand</button></Link>
           
 				</div>
@@ -127,7 +129,7 @@ function Dashboard() {
 					</div>
 					<div className='answer-section'>
 						{questions[currentQuestion].options.map((option) => (
-							<button onClick={() => {AnswerHandler(option.gryffindor, option.slytherin, option.ravenclaw, option.hufflepuff);}}>{option.optionText}</button>
+							<button className="houseButtons"onClick={() => {AnswerHandler(option.gryffindor, option.slytherin, option.ravenclaw, option.hufflepuff);}}>{option.optionText}</button>
 						))}
 					</div>
 				</div>
@@ -138,8 +140,9 @@ function Dashboard() {
 		<>
 				<div className='intro-part'>
 					<div className='intro-text'>
-						Welcome
+						Welcome to the House test I am the house sorter and I will dive deep into your mind to find were you truly belong.
 					</div>
+					
 					<button className='start-button button-loader' onClick={() => setShowQuiz(true)}>Start</button>
 				</div>
 		</>

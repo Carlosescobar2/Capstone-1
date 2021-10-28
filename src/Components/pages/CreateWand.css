@@ -5,6 +5,9 @@
 
 .pageStyle { 
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     
 }
 
@@ -15,11 +18,15 @@
 
 .coresSection { 
     align-items: center;
-    margin-top: 300px;
+    margin-top: 10px;
+}
+.PhoenixBtn { 
+    width:100px;
+    height:50px;
 }
 
 .woodSection{
-    margin-top: 500px;
+    margin-top: 400px;
   
 }
 

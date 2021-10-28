@@ -1,7 +1,7 @@
 
 export const questions = [ 
 { 
-    questionText: 'A student decided to sneak out of the Castle at night and tells your to cover for them. What do you do?',
+    questionText: 'A student decided to sneak out of the Castle at night and tells you to cover for them. What do you do?',
     options: [ 
         {optionText:'Cover for them', gryffindor:2, ravenclaw:2, slytherin:1, hufflepuff:2},
         {optionText:'Tell the teacher', gryffindor:0, ravenclaw:1, slytherin:4, hufflepuff:1},
@@ -12,7 +12,7 @@ export const questions = [
     ],
 },
 {
-    questionText: 'Your bully at school desides to challege you to a battle. Whats the first spell you would use on your bully?',
+    questionText: 'Your bully at school desides to challege you to a battle. What\'s the first spell you would use on your bully?',
     options : [ 
         {optionText:'Expelliarmus', gryffindor:2, ravenclaw:2, slytherin:0, hufflepuff:2},
         {optionText:'Crucio', gryffindor:0, ravenclaw:0, slytherin:4, hufflepuff:0},
@@ -34,7 +34,7 @@ export const questions = [
     ],
 },
 {
-    questionText: 'Which Wizard inspire you most at Hogwarts',
+    questionText: 'Which Wizard inspires you the most at Hogwarts',
     options : [ 
         {optionText: 'Dumbledore', gryffindor:3, ravenclaw: 2, slytherin:0, hufflepuff:2},
         {optionText: 'Professor Snape', gryffindor:0, ravenclaw: 1, slytherin:4, hufflepuff:0},
@@ -64,7 +64,7 @@ export const questions = [
     ],
 }, 
 {
-    questionText: 'Which one of these four choices would you be more interested in working in after your time at Hogwarts',
+    questionText: 'Which one of these four choices would you be more interested in doing after your time at Hogwarts',
     options : [ 
         {optionText: 'teacher', gryffindor:2, ravenclaw: 1, slytherin:1, hufflepuff:3},
         {optionText: 'ministry', gryffindor:0, ravenclaw: 3, slytherin:3, hufflepuff:1},
@@ -93,7 +93,7 @@ export const questions = [
     ],
 },
 {
-    questionText: 'Final question. imagine you are figthing the Death Eaters and Lord Voldermort purposes to those who stay will be spared. What would you do?',
+    questionText: 'Final question. imagine you are figthing the Death Eaters and Lord Voldermort say\'s to those who stay will be spared. What would you do?',
     options: [
         { optionText: 'Join him he\'s the most powerful', gryffindor: 0, slytherin: 4, ravenclaw: 1, hufflepuff: 2 },
         { optionText: 'Probably join him to not die', gryffindor: 0, slytherin: 2, ravenclaw: 2, hufflepuff:2},

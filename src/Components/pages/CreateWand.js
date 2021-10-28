@@ -3,10 +3,13 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db, logout } from "../firebase/firebase"
 import { useHistory } from "react-router";
 
+
+
 import{Cores, Woods} from '../../data/wandsData'
 import './CreateWand.css'
+import Wand1, { CylinderBufferGeometry, CylinderGeometry } from "../ThreeWands/wand1";
 
-
+import Phoenix from "../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png"
 
 
 const CreateWand = () => {
@@ -31,11 +34,7 @@ const CreateWand = () => {
           const [wand, setWand] = useState({wandcore:'', wandwood:''})
 
 
-
-
-    
-
-
+          // const [properWand, setProperWand] = useState()
 	useEffect(() => {
         if(loading) return;
         if(!user) return history.replace("/");
@@ -53,25 +52,19 @@ const CreateWand = () => {
 
         <div className="coresSection"><br /><br />
             <h2>Choose a core for your wand</h2>
+
+            {/* <button><img src="../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png" alt="my image"  className="PhoenixBtn" value="PhoenixFeather"onClick={e => setWand({...wand,wandcore:e.target.value})} /></button> */}
+
             <button value="PhoenixFeather"onClick={e => setWand({...wand,wandcore:e.target.value})}>PhoenixFeather</button>
             <button value="Dragon Heart-String"onClick={e => setWand({...wand,wandcore:e.target.value})}>Dragon Heart-String</button>
             <button value="Unicorn Tail Hair"onClick={e => setWand({...wand,wandcore:e.target.value})}>Unicorn Tail Hair</button>
-           
-
-         {/* {Cores.map((core, i) => 
-            //  <button  key={i} onClick={coresMerge}>{core.wandcore}</button>
-             
-
-         )} */}
-         	{/* <div className='answer-section'>
-						{Cores[Choosecore].wandcore.map((wandcore) => (
-							<button onClick={() => {coresMerge(wandcore.PhoenixFeather, wandcore.UnicornTailHair, wandcore.DragonHeartString);}}>{wandcore.}</button>
-						))}
-					</div> */}
+        
+        <div className="showWands">
+         
+        </div>
       
           
         </div>
-
          <div className="woodSection"><br /><br />
           <h2>Choose your a Wood</h2>
 
@@ -79,16 +72,21 @@ const CreateWand = () => {
           <button value="Holly" onClick={e=> setWand({...wand, wandwood:e.target.value})}>Holly</button>
           <button value="Yew" onClick={e=> setWand({...wand, wandwood:e.target.value})}>Yew</button>
 
-          
+          <div className="wandType">
+             <h2>{JSON.stringify(wand)}</h2>
+          </div>
+
+         
 
           <div className="connectObjects" value={setWand} onClick={e=> wand}>Finish</div>
-          <h2>{JSON.stringify(wand)}</h2>
+          
         {/* {Woods.map((wood, i)=>
         <button className='woodBtns' key={i}>{wood.wandwood}</button> 
         )} */}
  
 
         </div>
+        <Wand1 />
         </div>
     )
 }
