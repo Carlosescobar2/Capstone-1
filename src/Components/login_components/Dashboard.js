@@ -99,8 +99,8 @@ function Dashboard() {
  
 
 	return (
-		<div classname="dashboard">
-		<div className='main-title'>
+		<div classname="dashboard" >
+		<div className='main-title' >
 			<h1 className='order'>Become a Wizard</h1>
 			
 			</div>
@@ -147,11 +147,6 @@ function Dashboard() {
 		</>
 		)}
 		</div>
-		<div style={{ 
-      backgroundImage: `url("https://wallpaperaccess.com/full/22919.jpg")` 
-    }}>
-
-    </div>
 		</div>
 	);
 }
