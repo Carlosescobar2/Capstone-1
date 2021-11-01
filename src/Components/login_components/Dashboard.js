@@ -113,7 +113,7 @@ function Dashboard() {
 					<br/>
 					<p className='house'>{house}</p>
           			<img className='pic'src={banner}/>
-		  <Link to="/CreateWand"><button>{name} now make your wand</button></Link>
+		  <Link className="createWandBtn" to="/CreateWand"><button>{name} now make your wand</button></Link>
           
 				</div>
         

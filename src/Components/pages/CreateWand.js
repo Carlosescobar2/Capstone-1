@@ -11,6 +11,7 @@ import Wand1, { CylinderBufferGeometry, CylinderGeometry } from "../ThreeWands/w
 import Wand2 from '../ThreeWands/wand2'
 
 import Phoenix from "../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png"
+import Wand3 from "../ThreeWands/wand3";
 
 
 const CreateWand = () => {
@@ -87,7 +88,7 @@ const CreateWand = () => {
  
 
         </div>
-        <Wand2 />
+        <Wand3 />
         </div>
     )
 }

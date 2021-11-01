@@ -22,6 +22,8 @@ const Wand1 = () => {
     renderer.setSize( window.innerWidth, window.innerHeight / 2 );
     mountRef.current.appendChild( renderer.domElement );
 
+    
+
     class CustomSinCurve extends THREE.Curve {
 
         constructor( scale = 1 ) {
@@ -45,18 +47,18 @@ const Wand1 = () => {
     }
     
     const createSnake =()=> { 
-        const path = new CustomSinCurve( 6 );
+        const path = new CustomSinCurve( 3.5 );
         const geometry = new THREE.TubeGeometry( path, 22, 2, 4, false );
-        const material = new THREE.MeshPhongMaterial( { color: '#006400', wireframe:false } );
+        const material = new THREE.MeshPhongMaterial({color: "#794008"});
         const mesh = new THREE.Mesh( geometry, material);
         mesh.position.y=1;
-        mesh.position.x=3;
+        mesh.position.x=15;
 
         return mesh;
     }
 
     const createWand =()=> { 
-        const geometry = new THREE.CylinderGeometry( 0.8, 1.5, 30);
+        const geometry = new THREE.CylinderGeometry( 0.8, 1.5, 25);
         const material = new THREE.MeshPhongMaterial( { color: 'brown', wireframe:false } );
         const mesh = new THREE.Mesh( geometry, material);
         mesh.rotation.z = 1.5708
@@ -64,10 +66,10 @@ const Wand1 = () => {
     }
     const createhandle = () => { 
         const geometry = new THREE.CylinderGeometry(0.8, 1.5, 30);
-        const material = new THREE.MeshPhongMaterial({wireframe: false});
+        const material = new THREE.MeshPhongMaterial({color: "gold" , wireframe: false});
         const mesh = new THREE.Mesh(geometry, material)
         mesh.rotation.z = 1.5708
-        mesh.position.x = 5
+        mesh.position.x = 6
         return mesh;
 
     }
@@ -88,10 +90,10 @@ const Wand1 = () => {
       requestAnimationFrame( animate );
       renderer.render( scene, camera );
 
-        mergeSnake.rotation.x += 0.003;
-        mergeSnake.rotation.y += 0.003;
-        mergeSnake.rotation.z += .003;
-	//   mergeSnake.translateZ(1);
+    //     mergeSnake.rotation.x += 0.003;
+    //     mergeSnake.rotation.y += 0.003;
+    //     mergeSnake.rotation.z += .003;
+	  // mergeSnake.translateZ(.5);
     }
     animate();
 

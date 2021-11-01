@@ -20,6 +20,9 @@
     align-items: center;
     margin-top: 10px;
 }
+.coresSection h2 { 
+    color:red;
+}
 .PhoenixBtn { 
     width:100px;
     height:50px;
@@ -30,6 +33,33 @@
   
 }
 
+.woodSection h2 { 
+    color:red;
+}
+
+
 .woodBtns {
    
+}
+
+.createWandBtn { 
+    width: 200px;
+    font-size: 32px;
+    font-family: serif;
+    align-self: center;
+    color: #814b4a;
+    background-color: transparent;
+    border-radius: 7px;
+    display: flex;
+    padding: 20px;
+    margin-bottom: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #927c6c;
+    cursor: pointer;
+}
+
+.createWandBtn:hover{ 
+    background-color: #814b4a;
+    transition: 0.5s;
 }
