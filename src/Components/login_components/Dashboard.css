@@ -39,17 +39,30 @@
   color: white;
 }
 
-body {
+/* .dashboardBody {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url('https://wallpaperaccess.com/full/22919.jpg');
+  background: url('https://wallpaperaccess.com/full/22919.jpg');
   min-height: 97vh;
   background-color: black;
   background-size: cover;
   background-repeat: no-repeat;
   position:relative;
   z-index:-1;
+} */
+
+#dashBoardPage { 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.377),rgba(0, 0, 0, 0.698)), url('https://wallpaperaccess.com/full/22919.jpg');
+  min-height: 120vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position:relative;
+  width:100vw;
 }
 
 
@@ -104,13 +117,11 @@ body {
   height:500px;
   width:500px;
   margin-top: 10px;
-  margin-left: 220px;
-  margin: center;
-  align-items: center;
-  justify-content: center;
+
 
 }
 .part-two {
+  width: 60vw;
   animation: fadein 2s;
   margin-left: 25px;
   margin-right: 25px;
@@ -204,7 +215,7 @@ body {
   cursor: pointer;
 }
 
-button:hover {
+.start-button:hover {
   background-color: #814b4a;
   transition: 0.5s;
 }
@@ -212,4 +223,9 @@ button:hover {
 .wandPlace { 
   height:1vh;
   width:1vh;
+}
+
+.createLink { 
+  /* list-style-type: none; */
+  /* text-decoration: none; */
 }

@@ -99,7 +99,7 @@ function Dashboard() {
  
 
 	return (
-		<div classname="dashboard" >
+		<div classname="dashboardBody" id="dashBoardPage" >
 		<div className='main-title' >
 			<h1 className='order'>Become a Wizard</h1>
 			
@@ -113,8 +113,8 @@ function Dashboard() {
 					<br/>
 					<p className='house'>{house}</p>
           			<img className='pic'src={banner}/>
-		  <Link className="createWandBtn" to="/CreateWand"><button>{name} now make your wand</button></Link>
-          
+			 <button className="createWandBtn"><Link className='createLink' to="/CreateWand">{name} now make your wand</Link></button>
+        
 				</div>
         
 				

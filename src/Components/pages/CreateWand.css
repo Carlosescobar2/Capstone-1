@@ -8,16 +8,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+    min-height: 100vh;
+    background-image: url('https://wallpaperaccess.com/full/22919.jpg');
+    background-repeat: no-repeat;
 }
 
 .headerPg{
-    flex-flow: column;
+    flex-direction: column;
 
 }
 
 .coresSection { 
+    text-align:center;
     align-items: center;
+    justify-content: center;
     margin-top: 10px;
 }
 .coresSection h2 { 
@@ -29,7 +33,9 @@
 }
 
 .woodSection{
-    margin-top: 400px;
+    align-items: center;
+    justify-content: center;
+    margin-top:50px;
   
 }
 
@@ -43,19 +49,14 @@
 }
 
 .createWandBtn { 
-    width: 200px;
+    width: 20vw;
     font-size: 32px;
     font-family: serif;
-    align-self: center;
+
     color: #814b4a;
     background-color: transparent;
-    border-radius: 7px;
     display: flex;
-    padding: 20px;
     margin-bottom: 5px;
-    justify-content: center;
-    align-items: center;
-    border: 1px solid #927c6c;
     cursor: pointer;
 }
 

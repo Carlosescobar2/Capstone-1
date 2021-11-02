@@ -18,7 +18,7 @@ const Wand1 = () => {
 	
   renderer.setPixelRatio( window.devicePixelRatio );
   renderer.setClearColor('white')
-    renderer.setSize( window.innerWidth, window.innerHeight / 2 );
+    renderer.setSize( window.innerWidth, window.innerHeight / 2);
     mountRef.current.appendChild( renderer.domElement );
 	
 

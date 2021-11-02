@@ -8,9 +8,14 @@ import Scales from '../../Pictures/ScalesBump.jpeg'
 
 import BumpHoles from '../../Pictures/HolesBump3.jpeg'
 import HollyBump from '../../Pictures/hollyBump.jpeg'
+import PhoenixTech from '../../Pictures/chromashaderchange.jpeg'
+import Bricked from '../../Pictures/brickTech.jpeg'
 
 
-const Wand1 = () => {
+
+export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) => {
+
+
 
   const mountRef = useRef(null);
 
@@ -18,34 +23,45 @@ const Wand1 = () => {
 
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight , 0.1, 1000 );
-    var renderer = new THREE.WebGLRenderer();
-	const light = new THREE.DirectionalLight('white', .9)
-	const ambientLight = new THREE.AmbientLight('white', .7)
-	scene.add(light,ambientLight)
+    var renderer = new THREE.WebGLRenderer({ alpha: true });
+    // const controls = new OrbitControls(camera, renderer.domElement)
 
-  const loader = new THREE.TextureLoader();
-
-  const textureLoader = loader.load(Scales)
-  const textureLoader2 = loader.load(BumpHoles)
-  const textureLoader3 = loader.load(HollyBump)
-
-	
-  renderer.setPixelRatio( window.devicePixelRatio );
-  renderer.setClearColor('white')
+    const light = new THREE.DirectionalLight('white', .9)
+    const ambientLight = new THREE.AmbientLight('white', .7)
+    scene.add(light,ambientLight)
+    
+    // camera.position.set( 0, 20, 100 );
+    // controls.update();
+  
+    
+    const loader = new THREE.TextureLoader();
+    
+    const textureLoader = loader.load(Scales)
+    const textureLoader2 = loader.load(BumpHoles)
+    const textureLoader3 = loader.load(HollyBump)
+    const textureLoader4 = loader.load(PhoenixTech)
+    const textureLoader5 = loader.load(Bricked)
+    
+    
+    
+    
+    renderer.setPixelRatio( window.devicePixelRatio );
+    renderer.setClearColor('white')
     renderer.setSize( window.innerWidth, window.innerHeight / 2 );
+    renderer.setClearColor(0x000000, 0);
     mountRef.current.appendChild( renderer.domElement );
-
+    
     // const elderSpecial =()=> { 
-    //   const geometry = new THREE.SphereGeometry()
-    //   const geometry2 = new THREE.SphereGeometry()
-    //   const geometry3 = new THREE.SphereGeometry()
+      //   const geometry = new THREE.SphereGeometry()
+      //   const geometry2 = new THREE.SphereGeometry()
+      //   const geometry3 = new THREE.SphereGeometry()
     //   const elder = new THREE.MeshPhongMaterial({color: "red"});
     //   const mesh = new THREE.Mesh(geometry, geometry2, geometry3, elder)
     //   return mesh;
     // }
-    const holly = new THREE.MeshPhongMaterial({color: "#272F24", bumpMap:textureLoader3, bumpScale:20});
-    const elder = new THREE.MeshStandardMaterial({ color:"#5D492A"});
-    const yew = new THREE.MeshPhongMaterial({color: "black"});
+    const holly = new THREE.MeshPhongMaterial({color: "#7C7C7C", bumpMap:textureLoader3, bumpScale:20, side:THREE.DoubleSide});
+    const elder = new THREE.MeshStandardMaterial({ color:"#5D492A", bumpMap:textureLoader5, side:THREE.DoubleSide});
+    const yew = new THREE.MeshPhongMaterial({color: "#815931", bumpMap:textureLoader4, bumpScale:1, side:THREE.DoubleSide});
 
 
     class CustomDragonCurve extends THREE.Curve {
@@ -54,8 +70,8 @@ const Wand1 = () => {
             this.scale = scale;
            }
           getPoint( t, optionalTarget = new THREE.Vector3() ) {
-            const tx = t * 5 + 1 ;
-            const ty = Math.sin( 8 * Math.PI * t )/2;
+            const tx = t * 5 + 1   ;
+            const ty = Math.sin( 8  * Math.PI * t )/2;
             const tz = Math.cos( 8 * Math.PI * t )/2;
             return optionalTarget.set( tx, ty, tz ).multiplyScalar( this.scale );
     
@@ -69,9 +85,9 @@ const Wand1 = () => {
         this.scale = scale;
        }
       getPoint( t, optionalTarget = new THREE.Vector3()) {
-        const tx = t * 3 - -3;
-        const ty = Math.sin( 6 * Math.PI * t )/2;
-        const tz = Math.cos(5 * Math.PI * t )/2; 
+        const tx = t * 4 - -3;
+        const ty = Math.sin( 2 * Math.PI * t )/2;
+        const tz = Math.sin(1 * Math.PI * t )/2; 
         return optionalTarget.set( tx, ty, tz ).multiplyScalar( this.scale );
 
       };
@@ -111,14 +127,14 @@ const Wand1 = () => {
 
     const phoenixSpecialHandle = (userMaterial)=> { 
       const path = new CustomCurvePhoenix(5)
-      const geometry = new THREE.TubeGeometry( path, 22, 2, 4, true );
+      const geometry = new THREE.TubeGeometry( path, 22, 2, 40, false );
       const mesh = new THREE.Mesh( geometry, userMaterial);
       // mesh.rotation.z = 1.5708
       return mesh;
     }
 
     const phoenixShaft =(userMaterial)=> { 
-      const geometry = new THREE.CylinderGeometry( 0.8, 1.5, 20);
+      const geometry = new THREE.CylinderGeometry( .8, 1.2, 30,);
       const mesh = new THREE.Mesh( geometry, userMaterial);
       mesh.rotation.z = 1.5708
       return mesh;
@@ -130,8 +146,14 @@ const Wand1 = () => {
     const phoenixWand = (userMaterial) => { 
       const handle = phoenixSpecialHandle(userMaterial);
       const shaft = phoenixShaft(userMaterial);
-      handle.position.x=15 
+      handle.position.x=-10
       handle.position.z = -2.7
+      shaft.position.x=-7.6;
+      shaft.position.z = -2.7
+      shaft.position.y = 1
+
+      
+
       wand.add(handle, shaft)
       scene.add(wand)
     }
@@ -179,7 +201,7 @@ const Wand1 = () => {
       return mesh;
     }
 
-   const unicornWand = (userMaterial) => { 
+    const unicornWand = (userMaterial) => { 
       // const handle = unicornHandle(userMaterial);
       const shaft = unicornShaft(userMaterial);
       const special = unicornSpecial(userMaterial);
@@ -187,8 +209,13 @@ const Wand1 = () => {
       scene.add(wand)
     }
 
-
-     unicornWand(holly)
+    if (wandType === 'dragon') {
+      dragonWand(eval(wandMaterial))
+    } else if (wandType === 'phoenix'){ 
+      phoenixWand(eval(wandMaterial))
+    } else if(wandType === 'unicorn'){ 
+      unicornWand(eval(wandMaterial))
+    }
 
     camera.position.z =40;
 
@@ -215,7 +242,7 @@ const Wand1 = () => {
     // animate();
 
     return () => mountRef.current.removeChild( renderer.domElement);
-  }, []);
+  }, [wandMaterial, wandType]);
 
   return (
     <div className="Wand1" ref={mountRef}>
