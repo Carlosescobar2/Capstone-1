@@ -12,12 +12,11 @@ import BumpHoles from '../../Pictures/HolesBump3.jpeg'
 import HollyBump from '../../Pictures/hollyBump.jpeg'
 import PhoenixTech from '../../Pictures/chromashaderchange.jpeg'
 import Bricked from '../../Pictures/brickTech.jpeg'
+import { useCallback } from "react";
 
 
 
 export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) => {
-
-
 
   const mountRef = useRef(null);
 
@@ -209,20 +208,26 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       scene.add(wand)
     }
 
-    const basiliskShaft =(userMaterial)=> { 
-      const geometry = new THREE.CylinderGeometry( .2, .8, 40, 30);
-      const mesh = new THREE.Mesh( geometry, userMaterial);
-      mesh.rotation.z = 1.5708
-      return mesh;
-    }
+    // const basiliskShaft =(userMaterial)=> { 
+    //   const geometry = new THREE.CylinderGeometry( .2, .8, 40, 30);
+    //   const mesh = new THREE.Mesh( geometry, userMaterial);
+    //   mesh.rotation.z = 1.5708
+    //   return mesh;
+    // }
 
-    const basiliskSpecial = () => { 
+    // const basiliskSpecial = () => { 
 
-    }
+    // }
 
-    const basiliskWand = ()=> { 
-      
-    }
+    // const basiliskWand = (userMaterial)=> { 
+    //   const shaft = basiliskShaft(userMaterial)
+    //   const special = basiliskShaft(userMaterial)
+    //   wand.add(shaft,special)
+    //   scene.add(wand)
+    // }
+
+    // basiliskWand(elder)
+
 
     if (wandType === 'dragon') {
       dragonWand(eval(wandMaterial))
@@ -238,10 +243,18 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       requestAnimationFrame( animate );
       renderer.render( scene, camera );
 
-        // wand.rotation.x += 0.003;
-        // wand.rotation.y += 0.003;
-        // wand.rotation.z += .003;
-	  // wand.translateZ(.5);
+        wand.rotation.x += 0.003;
+        wand.rotation.y += 0.003;
+        wand.rotation.z += .003;
+       
+
+        // wand.position.z = -50
+        //   wand.position.y = 10
+        //   wand.position.x = 10
+
+
+        // wand.translateY(.5)
+	  // wand.translateZ(50);
     }
     animate();
 
@@ -260,7 +273,7 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
   }, [wandMaterial, wandType]);
 
   return (
-    <div className="Wand1" ref={mountRef}>
+    <div className="Wand1" ref={useCallback}>
 
     </div>
   );

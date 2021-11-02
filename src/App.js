@@ -10,6 +10,7 @@ import Register from "./Components/login_components/Register";
 import Reset from "./Components/login_components/Reset";
 import Dashboard from "./Components/login_components/Dashboard";
 import CreateWand from "./Components/pages/CreateWand";
+import Certification from "./Components/pages/Certification"
 
 
 
@@ -23,6 +24,7 @@ function App() {
           <Route exact path="/reset" component={Reset} />
           <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/CreateWand" component={CreateWand} />
+          <Route exact path= "/Certification" component={Certification} />
         </Switch>
       </Router>
     </div>

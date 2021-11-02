@@ -15,17 +15,18 @@
 
 .headerPg{
     flex-direction: column;
-
+    color: white;
 }
 
 .coresSection { 
     text-align:center;
     align-items: center;
+
     justify-content: center;
     margin-top: 10px;
 }
 .coresSection h2 { 
-    color:red;
+    color:white;
 }
 .PhoenixBtn { 
     width:100px;
@@ -40,7 +41,8 @@
 }
 
 .woodSection h2 { 
-    color:red;
+    color: white;
+    
 }
 
 

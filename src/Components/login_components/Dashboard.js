@@ -14,6 +14,7 @@ import BannerHufflePuff from "../../Pictures/HufflePuff.gif"
 import { Link, NavLink } from "react-router-dom";
 
 import CreateWand from "../pages/CreateWand";
+import { Audio } from "three";
 
 
 
@@ -90,6 +91,8 @@ function Dashboard() {
 	};
 
 
+
+
 	useEffect(() => {
 		if(showHouse){return ChangeBackground()}
         if(loading) return;
@@ -109,7 +112,7 @@ function Dashboard() {
 			<div>
 			{showHouse ? (
 				<div className='score-section'>
-					{name}you belong in
+					{name} you belong in
 					<br/>
 					<p className='house'>{house}</p>
           			<img className='pic'src={banner}/>
@@ -123,7 +126,7 @@ function Dashboard() {
 				<div className='part-two'>
 					<div className='question-section'>
 						<div className='question-count'>
-							<span>Question {currentQuestion + 1}</span>/{questions.length}
+							<span className="nextQuestion">Question {currentQuestion + 1}/{questions.length}</span>
 						</div>
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>

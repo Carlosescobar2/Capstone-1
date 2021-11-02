@@ -10,6 +10,11 @@ import './CreateWand.css'
 import Wand1, { CylinderBufferGeometry, CylinderGeometry } from "../ThreeWands/wand1";
 import Wand2 from '../ThreeWands/wand2'
 
+import Certification from "./Certification";
+
+import { Link, NavLink } from "react-router-dom";
+
+
 import Phoenix from "../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png"
 import Wand3 from "../ThreeWands/wand3";
 
@@ -21,8 +26,8 @@ const CreateWand = () => {
     const [name, setName] = useState("");
     const history = useHistory();  
 
-    const [wandType, setwandType] = useState('dragon')
-const [wandMaterial, setwandMaterial] = useState('yew')
+    const [wandType, setwandType] = useState('')
+const [wandMaterial, setwandMaterial] = useState('')
 
     const fetchUserName = async () => {
         try {
@@ -50,7 +55,6 @@ const [wandMaterial, setwandMaterial] = useState('yew')
     return (
         <div className="pageStyle" id= 'wandCreatorPage'>
           <div className="headerPg">
-            <h1>{name}</h1>
             <h1>Welcome to Olivander's wand creater</h1><br /><br />
             </div>
 
@@ -66,6 +70,10 @@ const [wandMaterial, setwandMaterial] = useState('yew')
         
         <div className="showWands">
         <Wand3 wandType={wandType} setwandType={setwandType} wandMaterial={wandMaterial} setwandMaterial={setwandMaterial}/>
+        </div>
+
+        <div>
+          <button className="finishWand"><Link className="finishLink" to="/Certification">Choose this wand</Link> </button>
         </div>
       
           
