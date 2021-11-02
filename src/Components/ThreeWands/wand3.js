@@ -4,6 +4,8 @@ import * as THREE from "three";
 import { Color, Group, LinearEncoding } from "three";
 import '../pages/CreateWand.css'
 
+import { OrbitControls } from "../ThreeWands/OrbitControls";
+
 import Scales from '../../Pictures/ScalesBump.jpeg'
 
 import BumpHoles from '../../Pictures/HolesBump3.jpeg'
@@ -29,11 +31,9 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
     const light = new THREE.DirectionalLight('white', .9)
     const ambientLight = new THREE.AmbientLight('white', .7)
     scene.add(light,ambientLight)
-    
-    // camera.position.set( 0, 20, 100 );
-    // controls.update();
-  
-    
+ 
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.update()
     const loader = new THREE.TextureLoader();
     
     const textureLoader = loader.load(Scales)
@@ -209,6 +209,21 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       scene.add(wand)
     }
 
+    const basiliskShaft =(userMaterial)=> { 
+      const geometry = new THREE.CylinderGeometry( .2, .8, 40, 30);
+      const mesh = new THREE.Mesh( geometry, userMaterial);
+      mesh.rotation.z = 1.5708
+      return mesh;
+    }
+
+    const basiliskSpecial = () => { 
+
+    }
+
+    const basiliskWand = ()=> { 
+      
+    }
+
     if (wandType === 'dragon') {
       dragonWand(eval(wandMaterial))
     } else if (wandType === 'phoenix'){ 
@@ -223,9 +238,9 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       requestAnimationFrame( animate );
       renderer.render( scene, camera );
 
-        wand.rotation.x += 0.003;
-        wand.rotation.y += 0.003;
-        wand.rotation.z += .003;
+        // wand.rotation.x += 0.003;
+        // wand.rotation.y += 0.003;
+        // wand.rotation.z += .003;
 	  // wand.translateZ(.5);
     }
     animate();
