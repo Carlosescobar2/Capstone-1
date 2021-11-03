@@ -12,16 +12,16 @@ import BumpHoles from '../../Pictures/HolesBump3.jpeg'
 import HollyBump from '../../Pictures/hollyBump.jpeg'
 import PhoenixTech from '../../Pictures/chromashaderchange.jpeg'
 import Bricked from '../../Pictures/brickTech.jpeg'
-import { useCallback } from "react";
-
 
 
 export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) => {
 
   const mountRef = useRef(null);
+  
 
   useEffect(() => {
 
+    let current = mountRef.current
     var scene = new THREE.Scene();
     var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight , 0.1, 1000 );
     var renderer = new THREE.WebGLRenderer({ alpha: true });
@@ -48,7 +48,7 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
     renderer.setClearColor('white')
     renderer.setSize( window.innerWidth, window.innerHeight / 2 );
     renderer.setClearColor(0x000000, 0);
-    mountRef.current.appendChild( renderer.domElement );
+    current.appendChild( renderer.domElement );
     
     // const elderSpecial =()=> { 
       //   const geometry = new THREE.SphereGeometry()
@@ -243,9 +243,9 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       requestAnimationFrame( animate );
       renderer.render( scene, camera );
 
-        wand.rotation.x += 0.003;
-        wand.rotation.y += 0.003;
-        wand.rotation.z += .003;
+        // wand.rotation.x += 0.003;
+        // wand.rotation.y += 0.003;
+        // wand.rotation.z += .003;
        
 
         // wand.position.z = -50
@@ -269,11 +269,11 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
 
     // animate();
 
-    return () => mountRef.current.removeChild( renderer.domElement);
+    return () => current.removeChild( renderer.domElement);
   }, [wandMaterial, wandType]);
 
   return (
-    <div className="Wand1" ref={useCallback}>
+    <div className="Wand1" ref={mountRef}>
 
     </div>
   );

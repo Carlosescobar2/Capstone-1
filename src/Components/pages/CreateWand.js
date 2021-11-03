@@ -42,6 +42,8 @@ const [wandMaterial, setwandMaterial] = useState('')
           alert("An error occured while fetching user data");
         }
       };
+      console.log(wandType)
+      console.log(wandMaterial)
 
 
           // const [properWand, setProperWand] = useState()

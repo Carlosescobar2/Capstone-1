@@ -8,15 +8,17 @@
 }
 
 
+a:link{
+  text-decoration: none;
+}
 
-
-.main-title h1  {
+.main-title h1 {
   font-family: 'Harry Potter', sans-serif;
   font-size: 100px;
   color:rgb(204, 183, 112);
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  margin: 0; /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em; /* Adjust as needed */
   align-items: center;
   text-align: center;
@@ -62,8 +64,7 @@
   justify-content: center;
   align-items: center;
   background: linear-gradient(rgba(0, 0, 0, 0.377),rgba(0, 0, 0, 0.698)), url('https://wallpaperaccess.com/full/22919.jpg');
-  min-height: 120vh;
-  cursor: url('../../Pictures/quillCursor-removebg-preview_1.cur'), auto;
+  min-height: 100vh;
   background-size: cover;
   background-repeat: no-repeat;
   position:relative;
@@ -91,21 +92,52 @@
   justify-content: space-evenly;
   animation: fadein 2s;
 } */
-
+.order{
+  padding: -40px;
+}
 .score-section {
   display: flex;
   flex-direction: column;
   text-align: center;
   font-size: 28px;
-  margin-top: 51px;
+  color:white;
+  margin-top: -30px;
   margin-bottom: 15%;
-  justify-content: center;
-  align-content: center;
+  justify-content: space-around;
+  align-items: center;
   transition: 1;
   animation: fadein 2s;
-  text-shadow: 4px 4px 4px #000;
+  text-decoration-style: none;
+  /* text-shadow: 4px 4px 4px #000; */
 }
 
+.createWandBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80%;
+  width: 50%;
+  line-height: 30px;
+  text-align:center;
+  text-decoration-style:none;
+  color:white;
+  outline: 1px solid rgb(204, 183, 112);
+  padding:10px;
+  -webkit-animation: bounce .3s infinite alternate;
+  -moz-animation: bounce .3s infinite alternate;
+  animation: bounce .3s infinite alternate;
+}
+
+@-webkit-keyframes bounce {
+  to { -webkit-transform: scale(1.2); }
+}
+@-moz-keyframes bounce {
+  to { -moz-transform: scale(1.2); }
+}
+@keyframes bounce {
+  to { transform: scale(1.2); }
+}
 .house {
   display: flex;
   margin: auto;
@@ -119,9 +151,10 @@
   display: flex;
 }
 .pic{
-  height:500px;
-  width:500px;
+  height:25rem;
+  width:100%;
   margin-top: 10px;
+  border-radius: 10px;
 
 
 }
@@ -239,7 +272,3 @@
   width:1vh;
 }
 
-.createLink { 
-  /* list-style-type: none; */
-  /* text-decoration: none; */
-}

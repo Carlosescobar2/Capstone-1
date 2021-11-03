@@ -3,7 +3,8 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
 import "./Dashboard.css";
-import { auth, db, logout } from "../firebase/firebase"
+import { auth, db } from "../firebase/firebase"
+import firebase from "firebase";
 
 import {questions} from '../../data/dataQuestions'
 
@@ -11,32 +12,21 @@ import BannerGryffindor from "../../Pictures/gryfinndorFlag.gif"
 import BannerRavenClaw from "../../Pictures/harry-potter-ravenclaw.gif"
 import BannerSlytherin from "../../Pictures/Slytherin.gif"
 import BannerHufflePuff from "../../Pictures/HufflePuff.gif"
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-import CreateWand from "../pages/CreateWand";
-import { Audio } from "three";
+import { fetchUserData } from "../firebase/dataBase";
+import { useCallback } from "react";
 
 
 
 
 
 function Dashboard() {
-  const [user, loading, error] = useAuthState(auth);
-  const [name, setName] = useState("");
-  const history = useHistory();
-  const fetchUserName = async () => {
-    try {
-      const query = await db
-        .collection("users")
-        .where("uid", "==", user?.uid)
-        .get();
-      const data = await query.docs[0].data();
-      setName(data.name);
-    } catch (err) {
-      console.error(err);
-      alert("An error occured while fetching user data");
-    }
-  };
+  const [user, loading] = useAuthState(auth);
+	// const [userdata, setuserdata] = useState({username:'sam', email:'', uid:''})
+const [name, setName] = useState('')
+//   const history = useHistory();
+
   const [currentQuestion, setCurrentQuestion] = useState(0);
 	
 	
@@ -78,8 +68,22 @@ function Dashboard() {
 			setShowHouse(true);
 		}
 	};
+	const addHouse = async(user,house) => {
+		try {
+			await db
+			  .collection("users")
+			  .doc(user.uid)
+			  .update({
+				house:house,
+			  });
+		  } catch (err) {
+			console.error(err);
+			alert(err.message);
+		  }
+	}
+
 	const [banner, setBanner] = useState('')
-	const ChangeBackground = () => {
+	const ChangeBackground =  useCallback(() => {
 		if (house === 'Gryffindor' && showHouse===true) {
 			setBanner(BannerGryffindor);}
 		if (house === 'Slytherin' && showHouse===true) {
@@ -88,24 +92,41 @@ function Dashboard() {
 			setBanner(BannerRavenClaw);}
 		if (house === 'Hufflepuff' && showHouse===true) {
 			setBanner(BannerHufflePuff);}
-	};
-
-
-
+	},[house,showHouse]
+	)
 
 	useEffect(() => {
-		if(showHouse){return ChangeBackground()}
-        if(loading) return;
-        if(!user) return history.replace("/");
-        fetchUserName();
-        },);
- 
+		if (loading) return;
+		if (!user) return history.replace("/");
+		fetchUserName();
+	  }, [user, loading]);
 
+	const history = useHistory();
+	  // Firebase auth login
+	  const fetchUserName = async () => {
+		try {
+		  const query = await db
+			.collection("users")
+			.where("uid", "==", user?.uid)
+			.get();
+		  const data = await query.docs[0].data();
+		  setName(data.name);
+		} catch (err) {
+		  console.error(err);
+		  alert("An error occured while fetching user data");
+		}
+	  };
+	
+
+
+ 
+	useEffect(()=>{ 
+		if(showHouse){return ChangeBackground()}
+	},[showHouse,ChangeBackground])
 	return (
-		<div classname="dashboardBody" id="dashBoardPage" >
+		<div className="dashboardBody" id="dashBoardPage" >
 		<div className='main-title' >
 			<h1 className='order'>Become a Wizard</h1>
-			
 			</div>
 		<div className='app'>
 			{showQuiz ? (
@@ -116,7 +137,7 @@ function Dashboard() {
 					<br/>
 					<p className='house'>{house}</p>
           			<img className='pic'src={banner}/>
-			 <button className="createWandBtn"><Link className='createLink' to="/CreateWand">{name} now make your wand</Link></button>
+			<Link onClick={()=>addHouse(user,house)} className='createWandBtn' to="/CreateWand"> Make your wand </Link>
         
 				</div>
         
@@ -131,8 +152,8 @@ function Dashboard() {
 						<div className='question-text'>{questions[currentQuestion].questionText}</div>
 					</div>
 					<div className='answer-section'>
-						{questions[currentQuestion].options.map((option) => (
-							<button className="houseButtons"onClick={() => {AnswerHandler(option.gryffindor, option.slytherin, option.ravenclaw, option.hufflepuff);}}>{option.optionText}</button>
+						{questions[currentQuestion].options.map((option, i) => (
+							<button key={i} className="houseButtons"onClick={() => {AnswerHandler(option.gryffindor, option.slytherin, option.ravenclaw, option.hufflepuff);}}>{option.optionText}</button>
 						))}
 					</div>
 				</div> 

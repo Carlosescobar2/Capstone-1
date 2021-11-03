@@ -22,11 +22,14 @@ const signInWithGoogle = async (e) => {
       .where("uid", "==", user.uid)
       .get();
     if (query.docs.length === 0) {
-      await db.collection("users").add({
+      await db.collection("users").doc(user.uid).set({
         uid: user.uid,
         name: user.displayName,
         authProvider: "google",
         email: user.email,
+        house: "gryffindor",
+        wandQuality: ['', '']
+
       });
     }
   } catch (err) {
@@ -51,6 +54,9 @@ const registerWithEmailAndPassword = async (name, email, password) => {
       name,
       authProvider: "local",
       email,
+      house:"gryfinndor",
+      wandQuality: ['phoenix', 'elder']
+
     });
   } catch (err) {
     console.error(err);

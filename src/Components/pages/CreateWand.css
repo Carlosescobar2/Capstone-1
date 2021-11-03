@@ -46,23 +46,4 @@
 }
 
 
-.woodBtns {
-   
-}
 
-.createWandBtn { 
-    width: 20vw;
-    font-size: 32px;
-    font-family: serif;
-
-    color: #814b4a;
-    background-color: transparent;
-    display: flex;
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-
-.createWandBtn:hover{ 
-    background-color: #814b4a;
-    transition: 0.5s;
-}
