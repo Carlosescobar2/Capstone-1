@@ -22,6 +22,10 @@ const fetchUserData = async (user) => {
     }
   }
 
+  const setUserWand =()=> { 
+    
+  }
+
   export {
       fetchUserData
   }

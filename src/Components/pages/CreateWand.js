@@ -18,6 +18,7 @@ import { Link, NavLink } from "react-router-dom";
 import Phoenix from "../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png"
 import Wand3 from "../ThreeWands/wand3";
 
+import { setUserWand } from "../firebase/firebase";
 
 
 
@@ -57,36 +58,40 @@ const [wandMaterial, setwandMaterial] = useState('')
     return (
         <div className="pageStyle" id= 'wandCreatorPage'>
           <div className="headerPg">
-            <h1>Welcome to Olivander's wand creater</h1><br /><br />
+            <h1>Welcome to Olivander's Wand Creater</h1><br /><br />
             </div>
 
 
         <div className="coresSection"><br /><br />
-            <h2>Choose a core for your wand</h2>
+            <h2 className="coresText">Choose a Core </h2>
 
             {/* <button><img src="../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png" alt="my image"  className="PhoenixBtn" value="PhoenixFeather"onClick={e => setWand({...wand,wandcore:e.target.value})} /></button> */}
+          <div className="btnContainer">
+            <button id="phoenixReveal" value="PhoenixFeather"onClick={e => setwandType('phoenix')}></button>
+            <button id="dragonReveal" value="Dragon Heart-String" onClick={e => setwandType('dragon')}></button>
+            <button id="unicornReveal" value="Unicorn Tail Hair"onClick={e => setwandType('unicorn')}></button>
+            <button id="basiliskReveal" value="Basilisk" onClick={e => setwandType('basilisk')}></button>
 
-            <button value="PhoenixFeather"onClick={e => setwandType('phoenix')}>PhoenixFeather</button>
-            <button value="Dragon Heart-String"onClick={e => setwandType('dragon')}>Dragon Heart-String</button>
-            <button value="Unicorn Tail Hair"onClick={e => setwandType('unicorn')}>Unicorn Tail Hair</button>
-        
+            </div>
         <div className="showWands">
-        <Wand3 wandType={wandType} setwandType={setwandType} wandMaterial={wandMaterial} setwandMaterial={setwandMaterial}/>
+        <Wand3 wandType={wandType} setwandType={setwandType} wandMaterial = {wandMaterial} setwandMaterial={setwandMaterial}/>
         </div>
 
         <div>
-          <button className="finishWand"><Link className="finishLink" to="/Certification">Choose this wand</Link> </button>
+          <button onClick={()=> setUserWand(user?.uid,wandType,wandMaterial)} className="finishWand"><Link className="finishLink" to="/Certification">Select Wand</Link></button>
         </div>
       
           
         </div>
          <div className="woodSection"><br /><br />
-          <h2>Choose your a Wood</h2>
+          <h2 className="woodsText">Choose your Wood</h2>
 
-          <button value="Elder"onClick={e => setwandMaterial('elder')}>Elder</button>
-          <button value="Holly" onClick={e=> setwandMaterial('holly')}>Holly</button>
-          <button value="Yew" onClick={e=> setwandMaterial('yew')}>Yew</button>
-
+        <div className="btnContainer">
+          <button id="elderReveal" value="Elder"onClick={e => setwandMaterial('elder')}></button>
+          <button id="hollyReveal" value="Holly" onClick={e=> setwandMaterial('holly')}></button>
+          <button id="yewReveal" value="Yew" onClick={e=> setwandMaterial('yew')}></button>
+          <button id="blackThornReveal" value='BlackThorn' onClick={e=> setwandMaterial('blackHorn')}></button>
+         </div>
           <div className="wandType">
             
           </div>

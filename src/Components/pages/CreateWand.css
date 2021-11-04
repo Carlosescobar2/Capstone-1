@@ -1,3 +1,5 @@
+
+
 * { 
     padding: 0; 
     margin: 0;
@@ -9,13 +11,26 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-image: url('https://wallpaperaccess.com/full/22919.jpg');
+    background: rgb(169,169,182);
+    background: linear-gradient(180deg, rgba(169,169,182,1) 26%, rgba(198,183,183,1) 99%);
+    /* background-image: url('https://c1.wallpaperflare.com/preview/804/778/325/sky-background-nature-blue.jpg'); */
     background-repeat: no-repeat;
+    background-size:cover;
 }
 
 .headerPg{
     flex-direction: column;
     color: white;
+  font-family: 'Harry Potter', sans-serif;
+  font-size: 18px;
+  color:black;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  align-items: center;
+  text-align: center;
+  justify-content: center;
 }
 
 .coresSection { 
@@ -23,27 +38,295 @@
     align-items: center;
 
     justify-content: center;
-    margin-top: 10px;
+    margin-top: -5px;
 }
 .coresSection h2 { 
-    color:white;
+    color:black;
 }
-.PhoenixBtn { 
+#phoenixReveal { 
     width:100px;
     height:50px;
 }
 
-.woodSection{
-    align-items: center;
-    justify-content: center;
-    margin-top:50px;
-  
+#unicornReveal { 
+    width:100px;
+    height:50px;
 }
 
-.woodSection h2 { 
+#dragonReveal{
+    width:100px;
+    height:50px;
+}
+#basiliskReveal{
+    width:100px;
+    height:50px;
+}
+#elderReveal{
+    width:100px;
+    height:50px;
+}
+#hollyReveal{
+    width:100px;
+    height:50px;
+}
+
+#yewReveal{
+    width:100px;
+    height:50px;
+}
+
+#blackThornReveal{
+    width:100px;
+    height:50px;
+}
+.coresText{
+    font-family: 'Harry Potter', sans-serif;
+    color:black;
+   
+
+}
+
+.woodsText{
+    font-family: 'Harry Potter', sans-serif;
+    color:black;
+
+}
+
+.woodSection{
+    width:100%;
+    text-align:center;
+    align-items: center;
+
+    justify-content: center;
+    margin-top: -20px;
+
+}
+
+.woodSection  { 
     color: white;
+}
+
+
+
+.btnContainer { 
+    width:100%;
+    height:30%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    
+
+}
+
+
+#phoenixReveal{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/feather1-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+#phoenixReveal:hover  {
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+
+#phoenixReveal:hover:after {
+    content: 'Phoenix Feather';
+    color:white;
     
 }
+#unicornReveal{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/unicornPic-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+#unicornReveal:hover { 
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+#unicornReveal:hover:after { 
+    content: 'Unicorn Tail Hair';
+    color:white;
+}
 
 
+#dragonReveal{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/dragonReveal-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
 
+}
+
+#dragonReveal:hover { 
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+#dragonReveal:hover:after { 
+    content: 'Dragon Heart-String';
+    color:white;
+}
+
+
+#basiliskReveal{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/basiliskReveal-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+#basiliskReveal:hover{
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+
+#basiliskReveal:hover:after{
+    content: 'Basilisk';
+    color:white;
+}
+
+
+#elderReveal{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/elderReveal-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+
+#elderReveal:hover{
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+
+#elderReveal:hover:after{
+    content: 'Elder';
+    color:white;
+}
+
+#hollyReveal{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/hollyReveal-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+#hollyReveal:hover{
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+
+#hollyReveal:hover:after{
+    content: 'Holly';
+    color:white;
+}
+
+#yewReveal{
+     background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/yewReveal-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+#yewReveal:hover{
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+
+#yewReveal:hover:after{
+    content: 'Yew';
+    color:white;
+}
+
+
+#blackThornReveal{
+    background-size: contain;
+    background-position: center;
+    background-image: url('../../Pictures/blackHorn2-removebg-preview.png');
+    background-repeat: no-repeat;
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+}
+#blackThornReveal:hover{
+    width:180px; 
+    transition: width 1s;
+    background-image: none;
+}
+
+
+#blackThornReveal:hover:after{
+    content: 'Black Thorn';
+    color:white;
+}
+
+.finishWand{
+    margin-top: -35px;
+    height: 50px;
+    width:100px;
+    background-color: black;
+    color:white
+
+}
+
+.finishWand:hover{
+    background-color: #814b4a;
+    transition: 0.5s;
+}
+
+.finishLink{
+    color:white;
+
+}

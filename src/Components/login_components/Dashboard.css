@@ -15,6 +15,7 @@ a:link{
 .main-title h1 {
   font-family: 'Harry Potter', sans-serif;
   font-size: 100px;
+  font-family: 'Harry Potter', sans-serif;
   color:rgb(204, 183, 112);
   overflow: hidden; /* Ensures the content is not revealed until the animation */
   white-space: nowrap; /* Keeps the content on a single line */
@@ -108,7 +109,7 @@ a:link{
   transition: 1;
   animation: fadein 2s;
   text-decoration-style: none;
-  /* text-shadow: 4px 4px 4px #000; */
+  text-shadow: 4px 4px 4px #000;
 }
 
 .createWandBtn {
@@ -215,7 +216,8 @@ a:link{
 }
 
 .houseButtons:hover { 
-  cursor: url(), auto;
+  background-color: #814b4a;
+  transition: 0.5s;
 }
 
 

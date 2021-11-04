@@ -99,6 +99,7 @@ const [name, setName] = useState('')
 		if (loading) return;
 		if (!user) return history.replace("/");
 		fetchUserName();
+		fetchUserData(user);
 	  }, [user, loading]);
 
 	const history = useHistory();
@@ -163,7 +164,7 @@ const [name, setName] = useState('')
 		<>
 				<div className='intro-part'>
 					<div className='intro-text'>
-						Welcome to the House test I am the house sorter and I will dive deep into your mind to find were you truly belong.
+						Welcome to the House test I am the House Sorter and I will dive deep into your mind to find where you truly belong.
 					</div>
 					
 					<button className='start-button button-loader' onClick={() => setShowQuiz(true)}>Start</button>

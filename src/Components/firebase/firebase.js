@@ -49,13 +49,14 @@ const registerWithEmailAndPassword = async (name, email, password) => {
   try {
     const res = await auth.createUserWithEmailAndPassword(email, password);
     const user = res.user;
-    await db.collection("users").add({
+    await db.collection("users").doc(user.uid).set({
+   
       uid: user.uid,
       name,
       authProvider: "local",
       email,
       house:"gryfinndor",
-      wandQuality: ['phoenix', 'elder']
+      wandQuality: ['', '']
 
     });
   } catch (err) {
@@ -75,6 +76,11 @@ const sendPasswordResetEmail = async (email) => {
 const logout = () => {
   auth.signOut();
 };
+
+const setUserWand = async (user, wandType, wandMaterial)=> { 
+    await db.collection('users').doc(user).update({wandQuality:[wandType, wandMaterial]})
+}
+
 export {
   auth,
   db,
@@ -83,4 +89,5 @@ export {
   registerWithEmailAndPassword,
   sendPasswordResetEmail,
   logout,
+  setUserWand
 };

@@ -13,6 +13,7 @@ import HollyBump from '../../Pictures/hollyBump.jpeg'
 import PhoenixTech from '../../Pictures/chromashaderchange.jpeg'
 import Bricked from '../../Pictures/brickTech.jpeg'
 
+import WhiteText from '../../Pictures/whiteText.jpeg'
 
 export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) => {
 
@@ -23,7 +24,7 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
 
     let current = mountRef.current
     var scene = new THREE.Scene();
-    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight , 0.1, 1000 );
+    var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/(window.innerHeight)  , 0.1, 1000 );
     var renderer = new THREE.WebGLRenderer({ alpha: true });
     // const controls = new OrbitControls(camera, renderer.domElement)
 
@@ -40,6 +41,8 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
     const textureLoader3 = loader.load(HollyBump)
     const textureLoader4 = loader.load(PhoenixTech)
     const textureLoader5 = loader.load(Bricked)
+    const textureLoader6 = loader.load(WhiteText)
+
     
     
     
@@ -61,6 +64,7 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
     const holly = new THREE.MeshPhongMaterial({color: "#7C7C7C", bumpMap:textureLoader3, bumpScale:20, side:THREE.DoubleSide});
     const elder = new THREE.MeshStandardMaterial({ color:"#5D492A", bumpMap:textureLoader5, side:THREE.DoubleSide});
     const yew = new THREE.MeshPhongMaterial({color: "#815931", bumpMap:textureLoader4, bumpScale:1, side:THREE.DoubleSide});
+    const blackHorn = new THREE.MeshPhongMaterial({color:"black", bumpMap:textureLoader6, bumpScale:1, side:THREE.DoubleSide})
 
 
     class CustomDragonCurve extends THREE.Curve {
@@ -91,6 +95,8 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
 
       };
     }
+
+    
     
     const dragonSnake =()=> { 
         const path = new CustomDragonCurve( 3.5 );
@@ -208,23 +214,59 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       scene.add(wand)
     }
 
-    // const basiliskShaft =(userMaterial)=> { 
-    //   const geometry = new THREE.CylinderGeometry( .2, .8, 40, 30);
-    //   const mesh = new THREE.Mesh( geometry, userMaterial);
-    //   mesh.rotation.z = 1.5708
-    //   return mesh;
+    const basiliskShaft =(userMaterial)=> { 
+      const geometry = new THREE.CylinderGeometry( .2, .8, 40, 30);
+      const mesh = new THREE.Mesh( geometry, userMaterial);
+      mesh.rotation.z = 1.5708
+      return mesh;
+    }
+
+    const createRings = ()=> { 
+      const geometry = new THREE.TorusGeometry( 2, .5, 10, 100 );
+      const material = new THREE.MeshBasicMaterial( { color: '#43360A' } );
+      const mesh = new THREE.Mesh( geometry, material );
+      mesh.position.x = 20
+        return mesh;
+
+    }
+
+
+    // const createSpikes = (size) => { 
+    //   const sphere = new THREE.SphereGeometry(1 + size/10, 10, 20);
+    //   const sphereMaterial = new THREE.MeshStandardMaterial({color:"#754804"})
+    //   const mesh = new THREE.Mesh(sphere, sphereMaterial)
+    //   // mesh.rotation.z = 1.5708
+    //   // mesh.position.x = 6
+    //   return mesh
+
     // }
 
-    // const basiliskSpecial = () => { 
+    //     const holoGram = () => { 
+//       const geometry = new THREE.BoxGeometry( 20, 20, 20 );
+// const edges = new THREE.EdgesGeometry( geometry );
+// const mesh = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
+//       return mesh
 
-    // }
+//     }
 
-    // const basiliskWand = (userMaterial)=> { 
-    //   const shaft = basiliskShaft(userMaterial)
-    //   const special = basiliskShaft(userMaterial)
-    //   wand.add(shaft,special)
-    //   scene.add(wand)
-    // }
+    const basiliskSpecial =()=> { 
+      const group = new THREE.Group()
+      let xpose = 10;
+      for(let i = 0; i < 9; i ++){
+        const sphere = createRings(i)
+        sphere.position.x = xpose + ( 1.2 * i)
+        sphere.rotation.y = 1.5708;
+      group.add(sphere)
+    }
+
+    return group
+  }
+    const basiliskWand = (userMaterial)=> { 
+      const shaft = basiliskShaft(userMaterial)
+      const special = basiliskSpecial(userMaterial)
+      wand.add(shaft,special)
+      scene.add(wand)
+    }
 
     // basiliskWand(elder)
 
@@ -235,6 +277,8 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       phoenixWand(eval(wandMaterial))
     } else if(wandType === 'unicorn'){ 
       unicornWand(eval(wandMaterial))
+    } else if(wandType === 'basilisk'){
+      basiliskWand(eval(wandMaterial))
     }
 
     camera.position.z =40;
@@ -243,9 +287,9 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       requestAnimationFrame( animate );
       renderer.render( scene, camera );
 
-        // wand.rotation.x += 0.003;
-        // wand.rotation.y += 0.003;
-        // wand.rotation.z += .003;
+        wand.rotation.x += 0.003;
+        wand.rotation.y += 0.003;
+        wand.rotation.z += .003;
        
 
         // wand.position.z = -50

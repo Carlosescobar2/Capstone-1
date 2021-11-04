@@ -6,12 +6,18 @@ import { useHistory } from "react-router";
 
 import "./Certification.css"
 
+
+import Wand3 from '../ThreeWands/wand3'
+
+import HogwartsSeal from '../../Pictures/hogwarts2seal-removebg-preview.png'
+
 const Certification = () => {
     const [user, loading, error] = useAuthState(auth);
     const [name, setName] = useState("");
     const history = useHistory();  
     const [house, setHouse] = useState('')
-
+    const [wandType, setwandType] = useState('')
+    const [wandMaterial, setwandMaterial] = useState('')
 
     const fetchUserName = async () => {
         try {
@@ -45,6 +51,8 @@ const Certification = () => {
                  .then((querySnapshot) => {
                    querySnapshot.forEach((doc) => {
                      setHouse(doc.data().house);
+                     setwandType(doc.data().wandQuality[0]);
+                     setwandMaterial(doc.data().wandQuality[1])
                    });
                  });
              }
@@ -58,21 +66,25 @@ const Certification = () => {
 
 
     return (
-        <div classname="finalBody">
+        <div className="finalBody">
             <div className="finalHeader">
                 <button className="logoutBtn" onClick={logout}>Logout</button>
                 <h2>You are a Wizard</h2>
             </div>
-            <div className="certificatePage">
-                <h2> Congratualtions {name} you are now a wizard at Hogwarts. Your house at Hogwarts is {house} and you will make a great wizard. Below is displayed the wand that you created at Olivander shop. The wand consist of </h2>
-                <div className="finalWandDisplay">
 
-            </div>
-            <div className="finalHouseDisplay">
-            </div>
-
-            </div>
            
+          <div className="certBackground">
+            <div className="certificatePage">
+              <img className="hogwartsSeal" src={HogwartsSeal}/>
+              <h2 className="witchCraft">Hogwarts School of WitchCraft and Wizardly</h2>
+                <h2 className='flex'> Congratulations <span className='cursiveName'>{name}</span>.You are now a wizard at Hogwarts. Your house at Hogwarts is <span className="cursiveName">{house}</span> and you will make a great wizard. Below is displayed the wand that you created at Olivander shop. The wand consist of </h2>
+                  <div className="finalWandDisplay">
+
+                     <Wand3 wandType={wandType} setwandType={setwandType} wandMaterial={wandMaterial} setwandMaterial={setwandMaterial}/>
+
+                  </div>
+            </div>
+            </div>
             
         </div>
     )

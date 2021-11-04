@@ -6,13 +6,13 @@ export const questions = [
         {optionText:'Cover for them', gryffindor:2, ravenclaw:2, slytherin:1, hufflepuff:2},
         {optionText:'Tell the teacher', gryffindor:0, ravenclaw:1, slytherin:4, hufflepuff:1},
         {optionText:'Convince the student to stay', gryffindor:1, ravenclaw:2, slytherin:0, hufflepuff:4},
-        {optionText:'Dont cover for them', gryffindor:0, ravenclaw:2, slytherin:4, hufflepuff:1}
+        {optionText:'Don\'t cover for them', gryffindor:0, ravenclaw:2, slytherin:4, hufflepuff:1}
 
 
     ],
 },
 {
-    questionText: 'Your bully at school desides to challege you to a battle. What\'s the first spell you would use on your bully?',
+    questionText: 'Your bully at school decides to challenge you to a battle. What\'s the first spell you would use on your bully?',
     options : [ 
         {optionText:'Expelliarmus', gryffindor:2, ravenclaw:2, slytherin:0, hufflepuff:2},
         {optionText:'Crucio', gryffindor:0, ravenclaw:0, slytherin:4, hufflepuff:0},
@@ -29,12 +29,12 @@ export const questions = [
     options : [ 
         {optionText:'Loving', gryffindor:1, ravenclaw:1, slytherin:1, hufflepuff:2},
         {optionText:'Relentless', gryffindor:2, ravenclaw:1, slytherin:3, hufflepuff:0},
-        {optionText:'patience', gryffindor:1, ravenclaw:2, slytherin:0, hufflepuff:3},
-        {optionText:'intergrity', gryffindor:2, ravenclaw:1, slytherin:0, hufflepuff:3}
+        {optionText:'Patience', gryffindor:1, ravenclaw:2, slytherin:0, hufflepuff:3},
+        {optionText:'Integrity', gryffindor:2, ravenclaw:1, slytherin:0, hufflepuff:3}
     ],
 },
 {
-    questionText: 'Which Wizard inspires you the most at Hogwarts',
+    questionText: 'Which Wizard inspires you the most at Hogwarts?',
     options : [ 
         {optionText: 'Dumbledore', gryffindor:3, ravenclaw: 2, slytherin:0, hufflepuff:2},
         {optionText: 'Professor Snape', gryffindor:0, ravenclaw: 1, slytherin:4, hufflepuff:0},
@@ -64,19 +64,19 @@ export const questions = [
     ],
 }, 
 {
-    questionText: 'Which one of these four choices would you be more interested in doing after your time at Hogwarts',
+    questionText: 'Which one of these four choices would you be more interested in doing after your time at Hogwarts?',
     options : [ 
-        {optionText: 'teacher', gryffindor:2, ravenclaw: 1, slytherin:1, hufflepuff:3},
-        {optionText: 'ministry', gryffindor:0, ravenclaw: 3, slytherin:3, hufflepuff:1},
+        {optionText: 'Teacher', gryffindor:2, ravenclaw: 1, slytherin:1, hufflepuff:3},
+        {optionText: 'Ministry', gryffindor:0, ravenclaw: 3, slytherin:3, hufflepuff:1},
         {optionText: 'Quidditch-Player', gryffindor:2, ravenclaw:1, slytherin:2, hufflepuff:1},
         {optionText: 'Oblivator', gryffindor:0, ravenclaw: 2, slytherin:2, hufflepuff:0}
 
     ],
 },
 {
-    questionText: 'What class would you most be interested at attending at HogWarts',
+    questionText: 'What class would you most be interested in attending at Hogwarts?',
     options : [ 
-        {optionText: 'DefenceArts', gryffindor:2, ravenclaw: 1, slytherin:2, hufflepuff:0},
+        {optionText: 'Defense-Arts', gryffindor:2, ravenclaw: 1, slytherin:2, hufflepuff:0},
         {optionText: 'Charms', gryffindor:2, ravenclaw: 2, slytherin:1, hufflepuff:1},
         {optionText: 'Herbology', gryffindor:2, ravenclaw:1, slytherin:0, hufflepuff:4},
         {optionText: 'Potions', gryffindor:1, ravenclaw: 3, slytherin:1, hufflepuff:1}
@@ -89,16 +89,16 @@ export const questions = [
         { optionText: 'Absolutely', gryffindor:1, slytherin: 3, ravenclaw: 1, hufflepuff: 0 },
         { optionText: 'Maybe', gryffindor: 1, slytherin: 1, ravenclaw: 2, hufflepuff: 1 },
         { optionText: 'No', gryffindor: 1, slytherin: 0, ravenclaw: 0, hufflepuff: 3},
-        { optionText: 'Quidditch sucks because I suck', gryffindor: 0, slytherin: 0, ravenclaw: 2, hufflepuff: 2}
+        { optionText: 'I don\'t need luck', gryffindor: 0, slytherin: 0, ravenclaw: 2, hufflepuff: 2}
     ],
 },
 {
-    questionText: 'Final question. imagine you are figthing the Death Eaters and Lord Voldermort say\'s to those who stay will be spared. What would you do?',
+    questionText: 'Final question. imagine you are fighting the Death Eaters and Lord Voldermort proposes to those who stay, will be spared. What would you do?',
     options: [
         { optionText: 'Join him he\'s the most powerful', gryffindor: 0, slytherin: 4, ravenclaw: 1, hufflepuff: 2 },
         { optionText: 'Probably join him to not die', gryffindor: 0, slytherin: 2, ravenclaw: 2, hufflepuff:2},
-        { optionText: 'Not likely', gryffindor:1, slytherin: 0, ravenclaw: 1, hufflepuff: 3 },
-        { optionText: 'Never he\'s evil i\'d rather die', gryffindor: 4, slytherin: 0, ravenclaw: 2, hufflepuff: 0}
+        { optionText: 'Not join', gryffindor:1, slytherin: 0, ravenclaw: 1, hufflepuff: 3 },
+        { optionText: 'Never he\'s evil I\'d rather die', gryffindor: 4, slytherin: 0, ravenclaw: 2, hufflepuff: 0}
     ],
 },
 

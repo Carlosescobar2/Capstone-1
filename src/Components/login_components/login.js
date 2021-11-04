@@ -16,7 +16,11 @@ function Login() {
     if (user) history.replace("/dashboard");
   }, [user, loading]);
   return (
+
     <div className="login">
+      <div className="loginHeader">
+        <h2>Wizard Creator</h2>
+      </div>
       <div className="login__container">
         <input
           type="text"
