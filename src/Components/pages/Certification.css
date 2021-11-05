@@ -3,8 +3,11 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Parisienne&display=swap%27'); */
 
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat&family=Parisienne&display=swap%27');
 
+@font-face {
+  font-family: 'Harry Potter', sans-serif;
+  src: url('../../Pictures/HARRYP__.TTF');
+}
 
 *{ 
     padding: 0;
@@ -37,7 +40,7 @@
 .certBackground {
     width: 100vh;
     min-height:80vh;
-    background: url('https://media.istockphoto.com/photos/old-stained-paper-texture-picture-id949108436?k=20&m=949108436&s=612x612&w=0&h=ngmdUyAAvtENEtmbGcdmT_UAk8rJ5aITwxNpD2q_tLg=');
+    background: url('../../Pictures//certificatePage.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
     align-items: center;

@@ -77,7 +77,7 @@ const Certification = () => {
             <div className="certificatePage">
               <img className="hogwartsSeal" src={HogwartsSeal}/>
               <h2 className="witchCraft">Hogwarts School of WitchCraft and Wizardly</h2>
-                <h2 className='flex'> Congratulations <span className='cursiveName'>{name}</span>.You are now a wizard at Hogwarts. Your house at Hogwarts is <span className="cursiveName">{house}</span> and you will make a great wizard. Below is displayed the wand that you created at Olivander shop. The wand consist of </h2>
+                <h2 className='flex'> Congratulations <span className='cursiveName'>{name}</span>.You are now a wizard at Hogwarts. Your house at Hogwarts is <span className="cursiveName">{house}</span> and you will make a great wizard. Below is displayed the wand that you created at Olivander's shop.</h2>
                   <div className="finalWandDisplay">
 
                      <Wand3 wandType={wandType} setwandType={setwandType} wandMaterial={wandMaterial} setwandMaterial={setwandMaterial}/>
