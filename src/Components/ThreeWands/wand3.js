@@ -1,7 +1,7 @@
 import { render } from "@testing-library/react";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { Color, Group, LinearEncoding } from "three";
+import { Color, Group, LinearEncoding, Material } from "three";
 import '../pages/CreateWand.css'
 
 import { OrbitControls } from "../ThreeWands/OrbitControls";
@@ -268,7 +268,9 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
       scene.add(wand)
     }
 
-    // basiliskWand(elder)
+   
+
+  
 
 
     if (wandType === 'dragon') {
@@ -297,8 +299,8 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
         //   wand.position.x = 10
 
 
-        // wand.translateY(.5)
-	  // wand.translateZ(50);
+        // wand.translateZ(.5)
+
     }
     animate();
 

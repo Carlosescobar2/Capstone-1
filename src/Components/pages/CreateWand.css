@@ -21,16 +21,16 @@
 .headerPg{
     flex-direction: column;
     color: white;
-  font-family: 'Harry Potter', sans-serif;
-  font-size: 18px;
-  color:black;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  align-items: center;
-  text-align: center;
-  justify-content: center;
+    font-family: 'Harry Potter', sans-serif;
+    font-size: 18px;
+    color:black;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    align-items: center;
+    text-align: center;
+    justify-content: center;
 }
 
 .coresSection { 
@@ -330,3 +330,11 @@
     color:white;
 
 }
+
+@media (max-width: 767px) {
+
+    .headerPg{
+        font-size: 2.5vw;
+    }
+
+   }

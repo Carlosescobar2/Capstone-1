@@ -3,11 +3,7 @@
 
 /* @import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Parisienne&display=swap%27'); */
 
-
-@font-face {
-  font-family: 'Harry Potter', sans-serif;
-  src: url('../../Pictures/HARRYP__.TTF');
-}
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Montserrat&family=Parisienne&display=swap%27');
 
 *{ 
     padding: 0;
@@ -38,20 +34,14 @@
 
 }
 .certBackground {
-    width: 100vh;
-    min-height:80vh;
+    width: 115vh;
+    min-height:85vh;
     background: url('../../Pictures//certificatePage.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
+    margin-left: 20%;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    top: 12%;
-    left: 0%;
-    padding: 100px;
-    margin-top: -.5%;
-    margin-left: 230px;
-    margin-bottom: 20%;
     display: flex;
     flex-direction: column;
   }
@@ -62,29 +52,26 @@
       align-items: center;
       flex-direction: column;
       height: 100%;
-    margin-bottom: auto;
-    max-height: 150px;
+      margin-bottom: auto;
+      max-height: 150px;
 
 
 
   }
 
   .flex { 
-    /* position: absolute;
-    bottom: 10%;
-    left: 30%;
-    width:50%; */
+  width: 80%;
+  text-align: center;
   
 }
 
   .hogwartsSeal{ 
     height: 25vh;
+    margin-top: 21%;
     align-items: center;
     justify-content: center;
     background-position: center;
-    /* position: absolute;
-    bottom: 65%;
-    left: 45%; */
+   
 }
 
 /* .witchCraft{
@@ -96,17 +83,34 @@
       width: 107px;
       align-items: center;
       justify-content: center;
+      margin-left:  90vw;
       color:black;
       border-radius: 10px;
-      position: absolute;
       display: flex;
-      bottom: 95%;
-      left: 91%;
-      right: 60%;
+      
   }
 
 .finalWandDisplay{
-   position: absolute;
-   top: 45vh;
+  position: absolute;
+  top:10vw;
+
 }
 
+@media (max-width: 767px) {
+ .certBackground{
+   align-items: center;
+   margin-left: 10%;
+   width: 80vw;
+
+ }
+ .finalWandDisplay{
+ }
+
+ .hogwartsSeal{
+  height: 20vh;
+  margin-top: 50%;
+   
+ }
+
+ }
+ 
