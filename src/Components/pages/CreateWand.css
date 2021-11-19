@@ -334,7 +334,13 @@
 @media (max-width: 767px) {
 
     .headerPg{
-        font-size: 2.5vw;
+        font-size: 3vw;
+    }
+    .finishWand{
+        margin-top: -45px;
+        /* height: 50px;
+        width:100px; */
+    
     }
 
    }
