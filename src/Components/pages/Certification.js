@@ -12,7 +12,7 @@ import Wand3 from '../ThreeWands/wand3'
 import HogwartsSeal from '../../Pictures/hogwarts2seal-removebg-preview.png'
 
 const Certification = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const [name, setName] = useState("");
     const history = useHistory();  
     const [house, setHouse] = useState('')
@@ -90,4 +90,4 @@ const Certification = () => {
     )
 }
 
-export default Certification
+export default Certification;

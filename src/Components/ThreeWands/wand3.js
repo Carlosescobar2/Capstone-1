@@ -1,7 +1,5 @@
-import { render } from "@testing-library/react";
 import { useEffect, useRef } from "react";
 import * as THREE from "three";
-import { Color, Group, LinearEncoding, Material } from "three";
 import '../pages/CreateWand.css'
 
 import { OrbitControls } from "../ThreeWands/OrbitControls";
@@ -95,10 +93,9 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
 
       };
     }
-
-    
-    
-    const dragonSnake =()=> { 
+   
+   
+        const dragonSnake =()=> { 
         const path = new CustomDragonCurve( 3.5 );
         const snakeMaterial = new THREE.MeshStandardMaterial({color: "green",bumpMap:textureLoader, bumpScale:.9, roughness:0, metalness:1, side:THREE.DoubleSide})
         const geometry = new THREE.TubeGeometry( path, 100, 1.5, 40, false );
@@ -241,13 +238,13 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
 
     // }
 
-    //     const holoGram = () => { 
-//       const geometry = new THREE.BoxGeometry( 20, 20, 20 );
-// const edges = new THREE.EdgesGeometry( geometry );
-// const mesh = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
-//       return mesh
+    const holoGram = () => { 
+      const geometry = new THREE.BoxGeometry( 20, 20, 20 );
+      const edges = new THREE.EdgesGeometry( geometry );
+      const mesh = new THREE.LineSegments( edges, new THREE.LineBasicMaterial( { color: 0xffffff } ) );
+      return mesh;
 
-//     }
+    }
 
     const basiliskSpecial =()=> { 
       const group = new THREE.Group()
@@ -269,7 +266,7 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
     }
 
    
-
+      holoGram()
   
 
 
@@ -299,7 +296,7 @@ export const Wand1 = ({wandType, setwandType, wandMaterial, setwandMaterial}) =>
         //   wand.position.x = 10
 
 
-        // wand.translateZ(.5)
+        // wand.translateZ(.25)
 
     }
     animate();

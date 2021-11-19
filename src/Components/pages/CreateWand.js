@@ -7,12 +7,10 @@ import { useHistory } from "react-router";
 
 import{Cores, Woods} from '../../data/wandsData'
 import './CreateWand.css'
-import Wand1, { CylinderBufferGeometry, CylinderGeometry } from "../ThreeWands/wand1";
-import Wand2 from '../ThreeWands/wand2'
 
 import Certification from "./Certification";
 
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 
 import Phoenix from "../../Pictures/Phoenix_feather_-_PAS-removebg-preview.png"
@@ -81,7 +79,7 @@ const [wandMaterial, setwandMaterial] = useState('')
           <button onClick={()=> setUserWand(user?.uid,wandType,wandMaterial)} className="finishWand"><Link className="finishLink" to="/Certification">Select Wand</Link></button>
         </div>
       
-          
+
         </div>
          <div className="woodSection"><br /><br />
           <h2 className="woodsText">Choose your Wood</h2>

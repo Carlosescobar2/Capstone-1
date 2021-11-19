@@ -4,7 +4,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useHistory } from "react-router";
 import "./Dashboard.css";
 import { auth, db } from "../firebase/firebase"
-import firebase from "firebase";
 
 import {questions} from '../../data/dataQuestions'
 
@@ -95,6 +94,22 @@ const [name, setName] = useState('')
 	},[house,showHouse]
 	)
 
+	const history = useHistory();
+	// Firebase auth login
+	const fetchUserName = async () => {
+	  try {
+		const query = await db
+		  .collection("users")
+		  .where("uid", "==", user?.uid)
+		  .get();
+		const data = query.docs[0].data();
+		setName(data.name);
+	  } catch (err) {
+		console.error(err);
+		alert("An error occured while fetching user data");
+	  }
+	};
+
 	useEffect(() => {
 		if (loading) return;
 		if (!user) return history.replace("/");
@@ -102,21 +117,6 @@ const [name, setName] = useState('')
 		fetchUserData(user);
 	  }, [user, loading]);
 
-	const history = useHistory();
-	  // Firebase auth login
-	  const fetchUserName = async () => {
-		try {
-		  const query = await db
-			.collection("users")
-			.where("uid", "==", user?.uid)
-			.get();
-		  const data = await query.docs[0].data();
-		  setName(data.name);
-		} catch (err) {
-		  console.error(err);
-		  alert("An error occured while fetching user data");
-		}
-	  };
 	
 
 
