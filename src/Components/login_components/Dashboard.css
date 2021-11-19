@@ -276,26 +276,28 @@ a:link{
   width:1vh;
 }
 
+
+
 @media (max-width: 767px) {
   .main-title h1 {
-    font-size: 55px;
+    font-size: 40px;
+    margin-top:-25%;
   }
   .intro-text{
-    width:60%;
+    width:80%;
+    font-size:15px; 
     position: relative;
     animation: fadein 2s;
   }
- }
 
-
-
-/* 
-@media screen and (max-width: 500px) {
-  #dashBoardPage{
-    background: linear-gradient(rgba(0, 0, 0, 0.377),rgba(0, 0, 0, 0.698)), url('https://wallpaperaccess.com/full/22919.jpg');
-    background-size: cover;
-    position: relative;
-    width:100vw;
-    background-color:red;
+  .houseButtons{ 
+    width:280px;
   }
-} */
+
+  .pic{
+    height:23rem;
+
+  }
+
+
+}
